@@ -1,3 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  .img {
+    @apply w-2/3 h-96
+  }
+}

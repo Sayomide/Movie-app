@@ -8,12 +8,42 @@
   <title>Movie app</title>
 </head>
 <body>
-  <div class="">
-    <input type="text" class="">
+<div class="w-auto h-screen overflow-hidden">
+  
+  <div class="flex justify-center items-center mt-2">
+  <p class="text-2xl m-2 md:text-4xl">Search:</p>
+  <input type="text" id="search" class="p-2 rounded-2xl outline-0 font-bold no-underline text-[18px] tracking
+      -wider bg-gray-300 md:text-4xl">
+  </div>
+  <!--
+  <select class="flex justify-center items-center w-52 rounded-2xl p-2">
+      <option value="yes" class="">movie 1</option>
+      <option value="yes" class="">movie 2</option>
+      <option value="yes" class="">movie 3</option>
+      <option value="yes" class="">movie 4</option>
+      <option value="yes" class="">movie 5</option>
+      <option value="no" class="">last movie</option>
+  </select>
+   -->
+  <div class="otherinfos flex flex-col justify-center items-center h-90vh overflow-y-hidden">
+    <p class="text-3xl font-normal text-center m-10 text-blue-700">Movie Informations</p>
   </div>
   
-  <div class="otherinfos">
-    <img src="noimage.jpg" alt="no image" class="">
+  <div class="Informations text-2xl">
+    
+    <div class="flex justify-center items-center">
+     <img src="noimage.jpg" alt="no image" class="img"/>
+    </div>
+    
+    <div class="info m-10">
+      <h2 class="">Title:</h2>
+      <p class="">Year:</p>
+      <p class="">Type:</p>
+    </div>
+    
   </div>
+ 
+</div>
 </body>
+<script src="movie.js"></script>
 </html>
