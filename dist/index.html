@@ -8,6 +8,7 @@
   <title>Movie app</title>
 </head>
 <body>
+  
 <div class="w-auto h-screen">
   
   <div class="flex justify-center items-center mt-2">
@@ -18,36 +19,30 @@
  
  
 <div class="flex flex-col justify-center items-center" id="list">
-  <!--
-   <div class="flex flex-row justify-around items-start  w-2/3 h-10 bg-gray-300 rounded">
-     <img src="noimage.jpg" alt="noimage" class="w-10 h-10 rounded-full p-2">
-      <p class="flex flex-col">Title:<span class="" id="title"></span>
-      </p>
-      <p class="flex flex-col">Year:<span class="" id="year"></span> 
-      </p>
-      <p class="flex flex-col"> Type:<span class="" id="type"></span>
-      </p>
-   </div>
-    -->
  </div>
 
- 
+ <div class="mediums">
   <div class="otherinfos flex flex-col justify-center items-center h-90vh overflow-y-hidden">
-    <p class="text-3xl font-normal text-center m-10 text-blue-700">Movie Informations</p>
+    <p class="text-3xl font-normal text-center m-10 mt-36 text-blue-700">Movie Informations</p>
   </div>
   
   <div class="Informations text-2xl">
     
     <div class="flex justify-center items-center">
-     <img src="noimage.jpg" alt="no image" class="img"/>
+     <img src="noimage.jpg" alt="no image" class="w-80" id="img"/>
     </div>
     
-    <div class="info m-10">
-      <h2 class="title">Title:</h2>
-      <p class="year">Year:</p>
-      <p class="type">Type:</p>
+    <div class="downmed m-8 flex flex-row justify-center items-center gap-14">
+      <button class="bg-blue-500 text-white p-4 rounded">Download</button>
+      <button class="p-4">Play Movie</button>
     </div>
     
+    <div class="flex flex-col info m-10 mt-16 gap-12">
+      <h2>Title: <b class="title"></b></h2>
+      <p>Year: <b class="year"></b> </p>
+      <p>Type: <b class="type"></b></p>
+    </div>
+ </div>   
   </div>
  
 </div>

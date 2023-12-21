@@ -1,31 +1,34 @@
-// ACTION FOR WHEN WE SEARCH BUTTON
+// ACTION FOR WHEN WE SEARCH BUTTON'
  let searchArea = document.querySelector("#search");
  let theValue;
+ if(searchArea){
  searchArea.addEventListener("change", () => {
  theValue = searchArea.value;
-    gettingMovie();
- });
+ gettingMovie();
+  });
+ } 
   
  // GETTING THE API RESPONSE
 let api_key = "724bcb77";
 async function gettingMovie() {
   let response = await fetch(`https://www.omdbapi.com/?s=${theValue}&apikey=${api_key}`);
-   let data = await response.json();
-   creatingDiv(data)
-  // document.querySelector(".img").src = data.Poster;
+  let data = await response.json();
+ creatingDiv(data);
 }
-  
+
+// APPEDING THE CHILD AND OTHERS
 let result;
-// let a;
 function creatingDiv(data) {
-result = data.Search;
-if(result) {
-// console.log(result)
-result.forEach(eachData => {
   let mainBody = document.querySelector("#list");
-  let newchild = document.createElement("div");
-  mainBody.appendChild(newchild);
-  newchild.innerHTML = 
+    result = data.Search;
+    while (mainBody.firstChild) {
+    mainBody.removeChild(mainBody.firstChild);
+  }
+  if(result) {
+    result.forEach(eachData => {
+    let newchild = document.createElement("div");
+    mainBody.appendChild(newchild);
+ newchild.innerHTML = 
  `
    <div class="flex flex-row justify-around items-start  w-96 h-20 bg-gray-300 rounded border-b-2 mt-2">
      <img src=${eachData.Poster} alt="noimage" class="w-10 h-10 rounded-full p-2">
@@ -37,13 +40,30 @@ result.forEach(eachData => {
       </p>
    </div>
  `
-        console.log(eachData.Title);
-   })
-}else {
-  // when the result is false
+ newchild.addEventListener("click", ()=> {
+ toDisplay(eachData);
+ })
+ console.log(eachData);
+ })
+} else {
+  // when the result is false nothing happens
 }
-  }
+}
+ 
+// TO DISPLAY THE INFO WHEN SELECTED
+function toDisplay(eachData){
+  let mainImage = document.querySelector("#img");
+  let mainTitle = document.querySelector(".title");
+  let mainYear = document.querySelector(".year");
+  let mainType = document.querySelector(".type");
+  mainImage.src = eachData.Poster;
+  mainTitle.innerHTML = eachData.Title;
+  mainYear.innerHTML = eachData.Year;
+  mainType.innerHTML =eachData.Type;
+}
 
+// download button yo download the film
+// also to be able to play pause
 
 /*
 http://www.omdbapi.com/?apikey=[yourkey]& // all request
