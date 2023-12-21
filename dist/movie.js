@@ -2,7 +2,7 @@
  let searchArea = document.querySelector("#search");
  let theValue;
  if(searchArea){
- searchArea.addEventListener("change", () => {
+ document.addEventListener("change", () => {
  theValue = searchArea.value;
  gettingMovie();
   });
@@ -13,7 +13,10 @@ let api_key = "724bcb77";
 async function gettingMovie() {
   let response = await fetch(`https://www.omdbapi.com/?s=${theValue}&apikey=${api_key}`);
   let data = await response.json();
+  let detailsResponse = data.Search[0].imdbID;
+ console.log(detailsResponse);
  creatingDiv(data);
+console.log(detailsResponse.Trailer);
 }
 
 // APPEDING THE CHILD AND OTHERS
@@ -43,10 +46,13 @@ function creatingDiv(data) {
  newchild.addEventListener("click", ()=> {
  toDisplay(eachData);
  })
- console.log(eachData);
+ // console.log(eachData);
  })
 } else {
   // when the result is false nothing happens
+let newchild = document.createElement("div");
+    mainBody.appendChild(newchild);
+ newchild.innerHTML = "No result";
 }
 }
  
@@ -64,6 +70,11 @@ function toDisplay(eachData){
 
 // download button yo download the film
 // also to be able to play pause
+
+
+// NEXT WORK
+  
+
 
 /*
 http://www.omdbapi.com/?apikey=[yourkey]& // all request
