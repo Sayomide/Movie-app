@@ -1,4 +1,5 @@
 // ACTION FOR WHEN WE SEARCH BUTTON'
+
  let searchArea = document.querySelector("#search");
  let theValue;
  if(searchArea){
@@ -69,16 +70,10 @@ function toDisplay(eachData){
 }
 
 // download button yo download the film
+function download(){
+}
+
 // also to be able to play pause
 
 
 // NEXT WORK
-  
-
-
-/*
-http://www.omdbapi.com/?apikey=[yourkey]& // all request
-http://img.omdbapi.com/?apikey=[yourkey]& // poster api 
-http://www.omdbapi.com/?i=tt3896198&apikey=724bcb77; //
-let response = await fetch(`https://www.omdbapi.com/?i=tt3896198&apikey=${api_key}`);
-*/
